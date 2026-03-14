@@ -11,44 +11,50 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --surface-page:   #EDE5D8;
-      --surface:        #F5EFE4;
-      --surface-raised: #FAF7F2;
-      --ink:            #2C1F0E;
-      --ink-light:      #5C4530;
-      --ink-muted:      #9C7E60;
-      --ink-faint:      #C4A882;
-      --border:         rgba(100,70,30,0.15);
-      --border-mid:     rgba(100,70,30,0.28);
-      --border-strong:  rgba(100,70,30,0.5);
-      --accent:         #7A5C38;
-      --accent-fg:      #FAF7F2;
-      --paper-line:     #E4D5C0;
+      --surface-page:   #f0f0ff;
+      --surface:        #f7f5ff;
+      --surface-raised: #ffffff;
+      --ink:            #1a0a3c;
+      --ink-light:      #3d2070;
+      --ink-muted:      #7c5cbf;
+      --ink-faint:      #b8a0e0;
+      --border:         rgba(100,60,200,0.15);
+      --border-mid:     rgba(100,60,200,0.28);
+      --border-strong:  rgba(100,60,200,0.5);
+      --accent:         #6030c0;
+      --accent-fg:      #ffffff;
+      --paper-line:     #d8c8f8;
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --surface-page:   #141009;
-        --surface:        #1C1510;
-        --surface-raised: #261D14;
-        --ink:            #EDE0CC;
-        --ink-light:      #C4A882;
-        --ink-muted:      #9C7E60;
-        --ink-faint:      #5C4530;
-        --border:         rgba(200,160,100,0.12);
-        --border-mid:     rgba(200,160,100,0.25);
-        --border-strong:  rgba(200,160,100,0.45);
-        --accent:         #A0784E;
-        --accent-fg:      #FAF7F2;
-        --paper-line:     #33261A;
+        --surface-page:   #0d0820;
+        --surface:        #140f2e;
+        --surface-raised: #1c1540;
+        --ink:            #ede8ff;
+        --ink-light:      #c0a8f0;
+        --ink-muted:      #8060c0;
+        --ink-faint:      #4a3480;
+        --border:         rgba(160,120,255,0.12);
+        --border-mid:     rgba(160,120,255,0.25);
+        --border-strong:  rgba(160,120,255,0.45);
+        --accent:         #8860e0;
+        --accent-fg:      #ffffff;
+        --paper-line:     #2a1f50;
       }
     }
 
     html, body {
       min-height: 100vh;
-      background: var(--surface-page);
+      background: linear-gradient(135deg, #e8eaff 0%, #f5f0ff 50%, #ffffff 100%);
       font-family: 'DM Serif Display', serif;
       color: var(--ink);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      html, body {
+        background: linear-gradient(135deg, #0a0620 0%, #140f2e 50%, #1a0f38 100%);
+      }
     }
 
     body {
@@ -126,8 +132,8 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       padding: 0.75rem 1.4rem;
-      background: var(--accent);
-      color: var(--accent-fg);
+      background: linear-gradient(135deg, #4a80f0, #8040d0);
+      color: #ffffff;
       border: none;
       border-radius: 8px;
       cursor: pointer;
