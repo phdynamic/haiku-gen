@@ -1,20 +1,16 @@
-export const config = {
-  api: {
-    bodyParser: true,
-  },
-};
-
 export default async function handler(req, res) {
-  if (req.method === 'OPTIONS') {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    return res.status(204).end();
-  }
+  console.log('method:', req.method);
+  console.log('body:', JSON.stringify(req.body));
+  console.log('raw body type:', typeof req.body);
 
   const body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
-  const { mood, systemPrompt } = body;
+  const { mood, systemPrompt } = body || {};
+
+  console.log('mood:', mood);
+  console.log('systemPrompt:', systemPrompt ? 'present' : 'missing');
+
   if (!mood || !systemPrompt) {
-    return res.status(400).json({ error: 'Missing fields' });
+    return res.status(400).json({ error: 'Missing fields', body: req.body });
   }
 
   const response = await fetch('https://api.anthropic.com/v1/messages', {
